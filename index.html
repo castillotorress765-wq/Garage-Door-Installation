@@ -1,680 +1,494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Null’s Brawl APK – Complete Guide</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Garage Door Experts in Santa Ana | Complete Garage Door Solutions</title>
+  <meta name="description" content="Trusted garage door experts in Santa Ana for repairs, installations, openers, emergency service, and preventative maintenance." />
 
-  <!-- Simple, clean UI/UX with pure CSS -->
   <style>
-    :root {
-      --bg: #050816;
-      --bg-soft: #0b1020;
-      --card: #111827;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.18);
-      --accent-strong: #0ea5e9;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --danger: #f97373;
-      --radius-lg: 18px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.65);
-      --shadow-chip: 0 10px 25px rgba(15, 23, 42, 0.8);
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: #eaf0ff;
+      --muted: rgba(234,240,255,.78);
+      --brand: #2dd4bf;   /* teal */
+      --brand2:#60a5fa;   /* blue */
+      --accent:#fb923c;   /* warm orange */
+      --ok:#34d399;
+      --border: rgba(255,255,255,.14);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 0%, rgba(45,212,191,.20), transparent 55%),
+        radial-gradient(900px 500px at 80% 10%, rgba(96,165,250,.22), transparent 55%),
+        radial-gradient(700px 520px at 60% 90%, rgba(251,146,60,.14), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 40%, #070b14 100%);
+      line-height:1.6;
     }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #020617 100%);
-      color: var(--text-main);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+    a{ color: var(--brand); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      padding: 32px 16px;
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: sticky; top: 12px; z-index: 50;
     }
-
-    .shell {
-      max-width: 960px;
-      width: 100%;
-      margin: auto;
-      position: relative;
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width: 220px;
     }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      display:grid; place-items:center; box-shadow: 0 10px 25px rgba(45,212,191,.20);
+      border: 1px solid rgba(255,255,255,.18);
+      flex: 0 0 auto;
+    }
+    .brand h1{
+      font-size: 14px; margin:0; letter-spacing:.2px;
+    }
+    .brand p{ margin:0; font-size: 12px; color: var(--muted); }
 
-    .orb {
-      position: absolute;
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .pill{
+      padding: 10px 12px;
       border-radius: 999px;
-      filter: blur(40px);
-      opacity: 0.35;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    .orb.orb-left {
-      width: 210px;
-      height: 210px;
-      background: #38bdf8;
-      top: -40px;
-      left: -40px;
-    }
-
-    .orb.orb-right {
-      width: 260px;
-      height: 260px;
-      background: #f97316;
-      bottom: -40px;
-      right: -40px;
-      opacity: 0.18;
-    }
-
-    .card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
-      border-radius: 26px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      overflow: hidden;
-      backdrop-filter: blur(22px);
-      position: relative;
-    }
-
-    .card-header {
-      padding: 22px 22px 18px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 55%);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--border);
       font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent);
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      box-shadow: var(--shadow-chip);
-      margin-bottom: 12px;
+      color: var(--text);
+      text-decoration:none;
+    }
+    .pill:hover{
+      background: rgba(255,255,255,.10);
+      text-decoration:none;
+    }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(45,212,191,.22), rgba(96,165,250,.18));
+      border-color: rgba(45,212,191,.35);
     }
 
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.35);
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      padding: 34px 22px;
+      border-radius: var(--radius2);
+      border:1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
+        radial-gradient(900px 480px at 20% 20%, rgba(45,212,191,.18), transparent 55%),
+        radial-gradient(820px 520px at 85% 0%, rgba(96,165,250,.16), transparent 55%);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
     }
-
-    h1 {
-      font-size: clamp(1.7rem, 2.2vw + 1.3rem, 2.4rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 540px;
-    }
-
-    .meta-row {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .meta-pill {
-      display: inline-flex;
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
       align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
+    }
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size: 12px;
+      color: rgba(234,240,255,.85);
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      width: fit-content;
     }
-
-    .dot-small {
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.85);
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--ok);
+      box-shadow: 0 0 0 6px rgba(52,211,153,.12);
     }
-
-    /* CTA buttons */
-    .cta-row {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .hero h2{
+      margin: 12px 0 10px;
+      font-size: clamp(26px, 3.2vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -.3px;
     }
-
-    .primary-btn,
-    .ghost-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 500;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
-        border-color 0.12s ease, color 0.12s ease;
-      white-space: nowrap;
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 62ch;
     }
-
-    .primary-btn {
-      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-      color: #0b1120;
-      border: 1px solid rgba(56, 189, 248, 0.9);
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 18px;
     }
-
-    .primary-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 38px rgba(56, 189, 248, 0.45);
-      background: linear-gradient(135deg, #0ea5e9, #38bdf8);
-    }
-
-    .ghost-btn {
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-main);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
-    }
-
-    .ghost-btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(148, 163, 184, 0.9);
-      background: rgba(15, 23, 42, 1);
-    }
-
-    .card-body {
-      padding: 20px 22px 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 800px) {
-      .card-body {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    article {
-      padding-right: 6px;
-      border-right: 1px dashed rgba(148, 163, 184, 0.28);
-    }
-
-    @media (max-width: 800px) {
-      article {
-        border-right: none;
-        padding-right: 0;
-        border-bottom: 1px dashed rgba(148, 163, 184, 0.28);
-        padding-bottom: 18px;
-      }
-    }
-
-    article p {
-      margin-bottom: 14px;
-      font-size: 0.94rem;
-      color: #e5e7ef;
-    }
-
-    article h2 {
-      font-size: 1.05rem;
-      margin: 6px 0 8px;
-      color: var(--accent-strong);
-      letter-spacing: -0.02em;
-    }
-
-    .side-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .chip {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--bg-soft);
-      color: var(--text-muted);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-    }
-
-    .chip.chip-accent {
-      background: var(--accent-soft);
-      border-color: rgba(56, 189, 248, 0.8);
-      color: var(--accent-strong);
-    }
-
-    .side-card {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
-      border-radius: var(--radius-lg);
-      padding: 12px 13px 13px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-    }
-
-    .side-card h3 {
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-      color: #f9fafb;
-    }
-
-    .side-card p {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    .pill-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 6px;
-    }
-
-    .pill-list li {
-      font-size: 0.8rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      color: #e5e7eb;
-    }
-
-    .two-col-list {
-      margin-top: 3px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 2px 12px;
-      font-size: 0.86rem;
-    }
-
-    .two-col-list span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.8);
-    }
-
-    .badge-dot.badge-danger {
-      background: rgba(248, 113, 113, 0.9);
-    }
-
-    .risk-text {
-      font-size: 0.84rem;
-      color: #fecaca;
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      margin-top: 4px;
-    }
-
-    .risk-bullet {
-      margin-top: 5px;
-      width: 3px;
-      height: 18px;
-      border-radius: 999px;
-      background: rgba(248, 113, 113, 0.85);
-    }
-
-    .safe-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.83rem;
-      margin-top: 4px;
-      color: #bbf7d0;
-    }
-
-    .safe-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
-    }
-
-    .disclaimer {
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .table-wrapper {
-      margin-top: 10px;
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
       border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(75, 85, 99, 0.85);
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.81rem;
-    }
-
-    thead {
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(59, 130, 246, 0.25));
-    }
-
-    th,
-    td {
-      padding: 8px 10px;
-      text-align: left;
-    }
-
-    th {
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration:none;
       font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      font-size: 0.74rem;
-      color: #e5f3ff;
+      font-size: 13px;
+    }
+    .btn:hover{ background: rgba(255,255,255,.10); text-decoration:none; }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(45,212,191,.35), rgba(96,165,250,.24));
+      border-color: rgba(45,212,191,.35);
+    }
+    .btn.accent{
+      background: linear-gradient(135deg, rgba(251,146,60,.28), rgba(45,212,191,.18));
+      border-color: rgba(251,146,60,.35);
     }
 
-    tbody tr:nth-child(odd) {
-      background: rgba(15, 23, 42, 1);
+    .hero-card{
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      padding: 18px;
+      box-shadow: 0 15px 45px rgba(0,0,0,.28);
+    }
+    .hero-card h3{ margin:0 0 10px; font-size: 14px; letter-spacing:.2px; }
+    .stats{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat{
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+    }
+    .stat strong{ display:block; font-size: 16px; }
+    .stat span{ display:block; color: var(--muted); font-size: 12px; margin-top: 4px; }
+
+    /* Sections */
+    .section{
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: var(--radius2);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+    }
+    .section h3{
+      margin:0 0 10px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .section p{ margin: 0; color: var(--muted); }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
     }
 
-    tbody tr:nth-child(even) {
-      background: rgba(17, 24, 39, 1);
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 14px;
     }
-
-    tbody td {
-      color: #e5e7eb;
+    .card{
+      grid-column: span 6;
+      padding: 16px;
+      border-radius: 18px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
     }
+    .card h4{ margin:0 0 8px; font-size: 14px; }
+    .card p{ margin:0; color: var(--muted); font-size: 13px; }
 
-    .tag-risk {
-      color: #fecaca;
-      font-weight: 500;
+    .list{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
     }
+    .list li{ margin: 6px 0; }
 
-    .tag-safe {
-      color: #bbf7d0;
+    .callout{
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      border:1px solid rgba(45,212,191,.32);
+      background: linear-gradient(135deg, rgba(45,212,191,.14), rgba(96,165,250,.10));
     }
+    .callout strong{ display:block; margin-bottom:6px; }
+    .callout p{ margin:0; color: rgba(234,240,255,.88); }
 
-    @media (max-width: 600px) {
-      .card {
-        border-radius: 22px;
-      }
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      padding: 18px 22px;
+      border-radius: var(--radius2);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .tiny{ font-size: 12px; }
+    .links{ display:flex; gap:12px; flex-wrap:wrap; }
 
-      .card-header,
-      .card-body {
-        padding-inline: 16px;
-      }
-
-      article h2 {
-        margin-top: 8px;
-      }
-
-      .cta-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    /* Responsive */
+    @media (max-width: 860px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .cards .card{ grid-column: span 12; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .topbar{ position: static; }
+      .brand{ min-width: auto; }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="shell">
-      <div class="orb orb-left"></div>
-      <div class="orb orb-right"></div>
-
-      <div class="card">
-        <!-- Header -->
-        <header class="card-header">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            <span>Game Mod Overview</span>
-          </div>
-          <h1>Null’s Brawl APK – Complete Guide (Features, Pros &amp; Risks)</h1>
-          <p class="subtitle">
-            Learn what 
-            <a href="https://example.com/nulls-brawl-apk-download" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;text-decoration:underline;">
-              Null’s Brawl APK
-            </a>
-            is, why players use it, and which risks you should know
-            before installing this private server version of Brawl Stars.
-          </p>
-
-          <div class="meta-row">
-            <div class="meta-pill">
-              <span class="dot-small"></span>
-              <span>Private Server · Modded Version</span>
-            </div>
-            <div class="meta-pill">
-              <span class="dot-small"></span>
-              <span>Focus: Features · Pros · Risks</span>
-            </div>
-          </div>
-
-          <!-- CTA buttons with links -->
-          <div class="cta-row">
-            <a
-              class="primary-btn"
-              href="https://example.com/nulls-brawl-apk-download"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🚀 Download Null’s Brawl APK
-            </a>
-            <a
-              class="ghost-btn"
-              href="https://example.com/nulls-brawl-details"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              📖 Read More About Null’s Brawl
-            </a>
-          </div>
-        </header>
-
-        <!-- Body -->
-        <div class="card-body">
-          <!-- Main article -->
-          <article>
-            <p>
-              <a href="https://example.com/nulls-brawl-apk-download" target="_blank" rel="noopener noreferrer" style="color:#38bdf8;text-decoration:underline;">
-                Null’s Brawl APK
-              </a>
-              is a popular <strong>private server version</strong> of the official
-              mobile game <strong>Brawl Stars</strong>. It is created by third-party developers and is
-              not associated with Supercell. This modded version is specially designed for players who
-              want to enjoy the game with <strong>unlimited resources, unlocked characters, and premium
-              features for free</strong>.
-            </p>
-
-            <p>
-              Unlike the official Brawl Stars, where players must grind for hours or spend real money
-              to unlock brawlers, skins, and gadgets, Null’s Brawl gives instant access to almost
-              everything. This makes it very attractive for players who want to test all characters,
-              practice strategies, or simply enjoy unlimited fun without restrictions.
-            </p>
-
-            <h2>Key Features of Null’s Brawl APK</h2>
-            <p>
-              The biggest highlight of Null’s Brawl is <strong>unlimited gems and coins</strong>, which
-              allow players to purchase any item without worrying about cost. All brawlers are unlocked
-              from the start, including new and rare ones. Players also get access to
-              <strong>all skins, star powers, gadgets, and gears for free</strong>.
-            </p>
-
-            <p>
-              Another unique feature is the availability of <strong>custom game modes and experimental
-              maps</strong> that do not exist in the official version. These modes make gameplay more
-              exciting and different from the standard experience. Since progress is not restricted,
-              players can instantly upgrade their characters to maximum level.
-            </p>
-
-            <h2>Advantages of Using Null’s Brawl</h2>
-            <p>
-              One of the main advantages is that players can enjoy the full game without spending any
-              money. It is also perfect for <strong>practice and testing</strong>, especially for new
-              players who want to learn about different brawlers and their abilities. The fast-paced
-              gameplay without grinding saves a lot of time and keeps the experience fun and relaxed.
-            </p>
-
-            <h2>Risks and Disadvantages</h2>
-            <p>
-              Despite its attractive features, Null’s Brawl also comes with serious risks. Since it is
-              an <strong>unofficial mod</strong>, it is not supported by Supercell. There is always a
-              risk of <strong>malware or viruses</strong> if the APK file is downloaded from unsafe
-              websites. Another major issue is the <strong>account ban risk</strong>, especially if
-              players try to connect it with their official Brawl Stars account.
-            </p>
-
-            <p>
-              Progress made in Null’s Brawl is usually <strong>temporary and server-based</strong>,
-              meaning data can be wiped at any time after updates. Also, there is no real competitive
-              ranking system like the official global servers.
-            </p>
-
-            <h2>Is Null’s Brawl APK Safe?</h2>
-            <p>
-              Null’s Brawl can be safe only if downloaded from a <strong>trusted source</strong> and
-              used separately from the official game. However, it can never be as secure as the
-              original Brawl Stars from the Play Store.
-            </p>
-          </article>
-
-          <!-- Side panel: quick info & comparison -->
-          <aside class="side-panel">
-            <div class="side-card">
-              <div class="chip-row">
-                <span class="chip chip-accent">Quick Facts</span>
-                <span class="chip">Unofficial</span>
-              </div>
-              <p>
-                Null’s Brawl runs on a private server and is mainly used for testing brawlers,
-                skins, and builds with unlimited resources.
-              </p>
-              <ul class="pill-list">
-                <li>Unlimited Gems</li>
-                <li>All Brawlers</li>
-                <li>Free Skins</li>
-                <li>Custom Modes</li>
-              </ul>
-              <div class="cta-row" style="margin-top:10px;">
-                <a
-                  class="primary-btn"
-                  href="https://example.com/nulls-brawl-apk-download"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style="padding:7px 14px;font-size:0.8rem;"
-                >
-                  ⬇ Download APK
-                </a>
-              </div>
-            </div>
-
-            <div class="side-card">
-              <h3>Pros vs. Cons at a Glance</h3>
-              <div class="two-col-list">
-                <span><span class="badge-dot"></span>Full content access</span>
-                <span><span class="badge-dot badge-danger"></span>Ban risk</span>
-                <span><span class="badge-dot"></span>No grinding</span>
-                <span><span class="badge-dot badge-danger"></span>Security concerns</span>
-                <span><span class="badge-dot"></span>Great for testing</span>
-                <span><span class="badge-dot badge-danger"></span>No official support</span>
-              </div>
-              <div class="risk-text">
-                <span class="risk-bullet"></span>
-                <span>
-                  Use it only if you understand the risks and never link it with your
-                  main Brawl Stars account.
-                </span>
-              </div>
-            </div>
-
-            <div class="side-card">
-              <h3>Null’s Brawl vs. Official Brawl Stars</h3>
-              <div class="table-wrapper">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Aspect</th>
-                      <th>Null’s Brawl</th>
-                      <th>Official</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Resources</td>
-                      <td>Unlimited gems &amp; coins</td>
-                      <td>Limited / earned or purchased</td>
-                    </tr>
-                    <tr>
-                      <td>Brawlers &amp; Skins</td>
-                      <td>All unlocked</td>
-                      <td>Progress or payment needed</td>
-                    </tr>
-                    <tr>
-                      <td>Safety</td>
-                      <td class="tag-risk">Unverified · Risky</td>
-                      <td class="tag-safe">Play Store · Safe</td>
-                    </tr>
-                    <tr>
-                      <td>Support</td>
-                      <td>Third-party only</td>
-                      <td>Official Supercell support</td>
-                    </tr>
-                    <tr>
-                      <td>Competitive Play</td>
-                      <td>Private server only</td>
-                      <td>Global ranked system</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="safe-label">
-                <span class="safe-dot"></span>
-                <span>For long-term and safe progress, the official game is always the better choice.</span>
-              </div>
-              <p class="disclaimer">
-                Disclaimer: This guide is for informational and educational purposes only. Always follow
-                the official game’s terms of service.
-              </p>
-            </div>
-          </aside>
+  <div class="wrap">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- Simple door icon -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M7 21V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v17" stroke="rgba(255,255,255,.9)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M9 8h6M9 12h6M9 16h6" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M6 21h12" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Santa Ana Garage Door Pros</h1>
+          <p>Repairs • Installations • Openers • Maintenance</p>
         </div>
       </div>
-    </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#safety">Safety</a>
+        <a class="pill" href="#maintenance">Maintenance</a>
+        <a class="pill primary" href="#local">Local Experts</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <span class="kicker"><span class="dot"></span> Trusted Professionals • Year-Round Reliability</span>
+          <h2>Garage Door Experts in Santa Ana – Trusted Professionals for Complete Garage Door Solutions</h2>
+          <p>
+            Your garage door is a major part of your home’s curb appeal—and a critical layer of safety and security.
+            Work with experienced specialists to keep your system smooth, quiet, and dependable.
+          </p>
+
+          <div class="cta">
+            <!-- REQUIRED LINK #1 (exact anchor text) -->
+            <a class="btn primary" href="https://upgradegaragedoorsandgates.com/" target="_blank" rel="noopener">
+              Garage Door Experts in Santa Ana
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <!-- REQUIRED LINK #2 (relevant anchor text) -->
+            <a class="btn accent" href="https://emergency-garage-door.s3.eu-central-1.amazonaws.com/index.html" target="_blank" rel="noopener">
+              24/7 Emergency Garage Door Help
+              <span aria-hidden="true">⚡</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Quick benefits">
+          <h3>Why pros make the difference</h3>
+          <div class="stats">
+            <div class="stat">
+              <strong>Safer Repairs</strong>
+              <span>High-tension parts handled correctly</span>
+            </div>
+            <div class="stat">
+              <strong>Longer Lifespan</strong>
+              <span>Prevent wear & reduce breakdowns</span>
+            </div>
+            <div class="stat">
+              <strong>Quiet Operation</strong>
+              <span>Proper balance + tuned hardware</span>
+            </div>
+            <div class="stat">
+              <strong>Clear Pricing</strong>
+              <span>Honest assessments, no fluff</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Why choose -->
+    <section class="section" id="why">
+      <h3>Why Choose Professional Garage Door Experts</h3>
+      <p>
+        Garage doors are complex systems made up of springs, cables, tracks, rollers, and openers—all working together
+        under high tension. Even a small issue can quickly turn into a major problem if not handled properly.
+        Trained experts diagnose accurately and deliver repairs that last.
+      </p>
+
+      <div class="grid-2">
+        <div class="callout">
+          <strong>Professionals help you:</strong>
+          <ul class="list">
+            <li>Avoid costly future repairs</li>
+            <li>Improve safety and performance</li>
+            <li>Extend the life of your garage door system</li>
+            <li>Maintain smooth and quiet operation</li>
+          </ul>
+        </div>
+
+        <div class="callout" style="border-color: rgba(251,146,60,.35); background: linear-gradient(135deg, rgba(251,146,60,.14), rgba(96,165,250,.10));">
+          <strong>What you get with expert service</strong>
+          <p>
+            Correct parts for your specific setup, careful adjustments, and complete testing—so your door opens and
+            closes safely, reliably, and efficiently.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <h3>Comprehensive Garage Door Services in Santa Ana</h3>
+      <p>
+        Trusted garage door experts provide complete solutions for residential and commercial properties—fast, clean,
+        and built around long-term performance.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h4>Garage Door Repair</h4>
+          <p>
+            Broken springs, worn cables, off-track doors, noisy rollers, or damaged panels—professionals handle repairs
+            efficiently and safely.
+          </p>
+        </article>
+
+        <article class="card">
+          <h4>Installation & Replacement</h4>
+          <p>
+            New door installs and full replacements done right: proper fit, balance, and alignment for smoother operation
+            and better curb appeal.
+          </p>
+        </article>
+
+        <article class="card">
+          <h4>Garage Door Opener Services</h4>
+          <p>
+            Installation, repair, and replacement for modern openers—including smart and quiet models designed for today’s homes.
+          </p>
+        </article>
+
+        <article class="card">
+          <h4>Emergency Garage Door Services</h4>
+          <p>
+            Unexpected failures happen. Emergency support restores access and security quickly when it matters most.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Systems -->
+    <section class="section" id="systems">
+      <h3>Expert Knowledge of All Garage Door Systems</h3>
+      <p>
+        Professionals work with all major door styles and materials—including steel, aluminum, wood, and insulated doors.
+        They also service torsion and extension spring systems, using the correct parts for each setup.
+      </p>
+    </section>
+
+    <!-- Safety -->
+    <section class="section" id="safety">
+      <h3>Safety-Focused Workmanship</h3>
+      <p>
+        Safety is always the priority. Experts follow strict standards when handling high-tension components. Every service includes
+        testing, adjustments, and inspections to ensure your garage door is safe for daily use.
+      </p>
+    </section>
+
+    <!-- Fast response -->
+    <section class="section" id="response">
+      <h3>Fast Response & Reliable Service</h3>
+      <p>
+        Local Santa Ana professionals understand how important a working garage door is to your daily routine. Quick response times,
+        clear communication, and dependable scheduling keep disruptions minimal.
+      </p>
+    </section>
+
+    <!-- Maintenance -->
+    <section class="section" id="maintenance">
+      <h3>Preventive Maintenance for Long-Term Performance</h3>
+      <p>
+        Routine service prevents sudden breakdowns and extends system life. Professional maintenance typically includes:
+      </p>
+      <ul class="list">
+        <li>Lubrication of moving parts</li>
+        <li>Spring and cable inspection</li>
+        <li>Door balance and alignment checks</li>
+        <li>Safety sensor testing</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Pro tip:</strong>
+        <p>Regular tune-ups keep your door operating smoothly, quietly, and safely—especially during high-use seasons.</p>
+      </div>
+    </section>
+
+    <!-- Customer-first -->
+    <section class="section" id="local">
+      <h3>Customer-Focused Service You Can Trust</h3>
+      <p>
+        Reputable garage door experts are committed to customer satisfaction—honest assessments, transparent pricing,
+        and quality workmanship without unnecessary upsells.
+      </p>
+
+      <div class="callout" style="margin-top:14px;">
+        <strong>Your Local Garage Door Experts in Santa Ana</strong>
+        <p>
+          Choose local professionals who understand the area’s needs and deliver personalized service. With durable repairs and modern
+          installations, your garage door stays secure, functional, and dependable.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="tiny">
+        © <span id="year"></span> Santa Ana Garage Door Services • Designed for a clean, modern UI/UX
+      </div>
+      <div class="links tiny">
+        <a href="#top">Back to top</a>
+        <a href="#services">Services</a>
+        <a href="#maintenance">Maintenance</a>
+      </div>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
