@@ -1,494 +1,202 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Garage Door Experts in Santa Ana | Complete Garage Door Solutions</title>
-  <meta name="description" content="Trusted garage door experts in Santa Ana for repairs, installations, openers, emergency service, and preventative maintenance." />
+  <meta charset="utf-8">
+  <title>Garage Door Experts in Santa Ana – Trusted Professionals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trusted garage door experts in Santa Ana providing complete garage door repair, installation, opener service, and emergency solutions.">
 
   <style>
     :root{
-      --bg: #0b1220;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.10);
-      --text: #eaf0ff;
-      --muted: rgba(234,240,255,.78);
-      --brand: #2dd4bf;   /* teal */
-      --brand2:#60a5fa;   /* blue */
-      --accent:#fb923c;   /* warm orange */
-      --ok:#34d399;
-      --border: rgba(255,255,255,.14);
-      --shadow: 0 18px 50px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius2: 24px;
-      --max: 1100px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      /* 🔥 Professional & trustworthy palette */
+      --bg-main:#0B0F1A;
+      --bg-soft:#121A2E;
+      --card:rgba(255,255,255,.07);
+      --border:rgba(255,255,255,.12);
+
+      --text:#F5F7FF;
+      --muted:rgba(245,247,255,.72);
+
+      --accent:#60A5FA;
+      --accent2:#22C55E;
+      --accent3:#F59E0B;
+
+      --radius:22px;
+      --shadow:0 26px 95px rgba(0,0,0,.7);
+      --max:1120px;
     }
 
-    *{ box-sizing:border-box; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: var(--font);
-      color: var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
       background:
-        radial-gradient(1200px 600px at 15% 0%, rgba(45,212,191,.20), transparent 55%),
-        radial-gradient(900px 500px at 80% 10%, rgba(96,165,250,.22), transparent 55%),
-        radial-gradient(700px 520px at 60% 90%, rgba(251,146,60,.14), transparent 55%),
-        linear-gradient(180deg, #070b14 0%, var(--bg) 40%, #070b14 100%);
-      line-height:1.6;
+        radial-gradient(1100px 650px at 12% 12%, rgba(96,165,250,.16), transparent 60%),
+        radial-gradient(900px 560px at 88% 16%, rgba(34,197,94,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg-soft), var(--bg-main));
     }
 
-    a{ color: var(--brand); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 60px; }
-
-    /* Top bar */
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:14px 16px;
-      background: rgba(255,255,255,.05);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      position: sticky; top: 12px; z-index: 50;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; min-width: 220px;
-    }
-    .logo{
-      width:38px; height:38px; border-radius:12px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      display:grid; place-items:center; box-shadow: 0 10px 25px rgba(45,212,191,.20);
-      border: 1px solid rgba(255,255,255,.18);
-      flex: 0 0 auto;
-    }
-    .brand h1{
-      font-size: 14px; margin:0; letter-spacing:.2px;
-    }
-    .brand p{ margin:0; font-size: 12px; color: var(--muted); }
-
-    .nav{
-      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-    .pill{
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      font-size: 12px;
-      color: var(--text);
-      text-decoration:none;
-    }
-    .pill:hover{
-      background: rgba(255,255,255,.10);
-      text-decoration:none;
-    }
-    .pill.primary{
-      background: linear-gradient(135deg, rgba(45,212,191,.22), rgba(96,165,250,.18));
-      border-color: rgba(45,212,191,.35);
-    }
-
-    /* Hero */
-    .hero{
-      margin-top: 18px;
-      padding: 34px 22px;
-      border-radius: var(--radius2);
-      border:1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.03)),
-        radial-gradient(900px 480px at 20% 20%, rgba(45,212,191,.18), transparent 55%),
-        radial-gradient(820px 520px at 85% 0%, rgba(96,165,250,.16), transparent 55%);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow:hidden;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: center;
-    }
-    .kicker{
-      display:inline-flex; gap:8px; align-items:center;
-      font-size: 12px;
-      color: rgba(234,240,255,.85);
-      background: rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 999px;
-      width: fit-content;
-    }
-    .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: var(--ok);
-      box-shadow: 0 0 0 6px rgba(52,211,153,.12);
-    }
-    .hero h2{
-      margin: 12px 0 10px;
-      font-size: clamp(26px, 3.2vw, 42px);
-      line-height: 1.15;
-      letter-spacing: -.3px;
-    }
-    .hero p{
-      margin:0;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 62ch;
-    }
-    .cta{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 18px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      text-decoration:none;
-      font-weight: 600;
-      font-size: 13px;
-    }
-    .btn:hover{ background: rgba(255,255,255,.10); text-decoration:none; }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(45,212,191,.35), rgba(96,165,250,.24));
-      border-color: rgba(45,212,191,.35);
-    }
-    .btn.accent{
-      background: linear-gradient(135deg, rgba(251,146,60,.28), rgba(45,212,191,.18));
-      border-color: rgba(251,146,60,.35);
-    }
-
-    .hero-card{
-      border-radius: var(--radius2);
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      padding: 18px;
-      box-shadow: 0 15px 45px rgba(0,0,0,.28);
-    }
-    .hero-card h3{ margin:0 0 10px; font-size: 14px; letter-spacing:.2px; }
-    .stats{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .stat{
-      padding: 12px 12px;
-      border-radius: 16px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
-    }
-    .stat strong{ display:block; font-size: 16px; }
-    .stat span{ display:block; color: var(--muted); font-size: 12px; margin-top: 4px; }
-
-    /* Sections */
-    .section{
-      margin-top: 18px;
-      padding: 22px;
-      border-radius: var(--radius2);
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
-      box-shadow: var(--shadow);
-    }
-    .section h3{
-      margin:0 0 10px;
-      font-size: 18px;
-      letter-spacing: -.2px;
-    }
-    .section p{ margin: 0; color: var(--muted); }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 14px;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-      margin-top: 14px;
-    }
+    .wrap{max-width:var(--max);margin:auto;padding:26px 18px 90px}
     .card{
-      grid-column: span 6;
-      padding: 16px;
-      border-radius: 18px;
+      background:linear-gradient(180deg,var(--card),rgba(255,255,255,.035));
       border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
     }
-    .card h4{ margin:0 0 8px; font-size: 14px; }
-    .card p{ margin:0; color: var(--muted); font-size: 13px; }
 
-    .list{
-      margin: 12px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
+    h1{font-size:clamp(30px,3.3vw,46px);margin:0 0 14px;line-height:1.1}
+    h2{margin:26px 0 10px;font-size:20px}
+    p{margin:0 0 14px;line-height:1.8;color:var(--muted);font-size:15.6px}
+    ul{margin:10px 0 16px 20px;color:var(--muted);line-height:1.75}
+    li{margin:6px 0}
+
+    .divider{height:1px;background:rgba(255,255,255,.1);margin:24px 0}
+
+    /* inline anchor */
+    .inlink{
+      color:var(--accent);
+      font-weight:800;
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
-    .list li{ margin: 6px 0; }
+    .inlink:hover{color:#CFE4FF}
 
-    .callout{
-      margin-top: 14px;
-      padding: 16px;
-      border-radius: 18px;
-      border:1px solid rgba(45,212,191,.32);
-      background: linear-gradient(135deg, rgba(45,212,191,.14), rgba(96,165,250,.10));
+    /* mid callout */
+    .mid{
+      margin:18px 0;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(245,158,11,.25);
+      background:rgba(245,158,11,.08);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
     }
-    .callout strong{ display:block; margin-bottom:6px; }
-    .callout p{ margin:0; color: rgba(234,240,255,.88); }
+    .mid a{
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:800;
+      background:linear-gradient(135deg, rgba(245,158,11,.95), rgba(34,197,94,.9));
+      color:#0B0F1A;
+      text-decoration:none;
+    }
 
-    /* Footer */
     footer{
-      margin-top: 18px;
-      padding: 18px 22px;
-      border-radius: var(--radius2);
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-    }
-    .tiny{ font-size: 12px; }
-    .links{ display:flex; gap:12px; flex-wrap:wrap; }
-
-    /* Responsive */
-    @media (max-width: 860px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .cards .card{ grid-column: span 12; }
-      .grid-2{ grid-template-columns: 1fr; }
-      .topbar{ position: static; }
-      .brand{ min-width: auto; }
+      margin-top:34px;
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.1);
+      font-size:13px;
+      color:rgba(245,247,255,.6);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <!-- Top Bar -->
-    <header class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <!-- Simple door icon -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M7 21V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v17" stroke="rgba(255,255,255,.9)" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M9 8h6M9 12h6M9 16h6" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M6 21h12" stroke="rgba(255,255,255,.75)" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div>
-          <h1>Santa Ana Garage Door Pros</h1>
-          <p>Repairs • Installations • Openers • Maintenance</p>
-        </div>
-      </div>
+<main class="wrap">
+<article class="card">
 
-      <nav class="nav" aria-label="Primary">
-        <a class="pill" href="#services">Services</a>
-        <a class="pill" href="#safety">Safety</a>
-        <a class="pill" href="#maintenance">Maintenance</a>
-        <a class="pill primary" href="#local">Local Experts</a>
-      </nav>
-    </header>
+<h1>Garage Door Experts in Santa Ana – Trusted Professionals for Complete Garage Door Solutions</h1>
 
-    <!-- Hero -->
-    <section class="hero" id="top">
-      <div class="hero-grid">
-        <div>
-          <span class="kicker"><span class="dot"></span> Trusted Professionals • Year-Round Reliability</span>
-          <h2>Garage Door Experts in Santa Ana – Trusted Professionals for Complete Garage Door Solutions</h2>
-          <p>
-            Your garage door is a major part of your home’s curb appeal—and a critical layer of safety and security.
-            Work with experienced specialists to keep your system smooth, quiet, and dependable.
-          </p>
+<!-- ✅ FIRST LINK: starting paragraph, anchor text "Garage door" -->
+<p>
+When it comes to your
+<a class="inlink" href="https://upgradegaragedoorsandgates.com/" target="_blank" rel="noopener">Garage door</a>,
+experience and expertise matter. Your garage door is not only a key part of your home’s appearance but also a critical component of safety and security. Choosing reliable garage door experts in Santa Ana ensures your system operates smoothly, safely, and efficiently year-round. From minor repairs to full installations, professional specialists deliver dependable solutions tailored to your needs.
+</p>
 
-          <div class="cta">
-            <!-- REQUIRED LINK #1 (exact anchor text) -->
-            <a class="btn primary" href="https://upgradegaragedoorsandgates.com/" target="_blank" rel="noopener">
-              Garage Door Experts in Santa Ana
-              <span aria-hidden="true">↗</span>
-            </a>
+<div class="divider"></div>
 
-            <!-- REQUIRED LINK #2 (relevant anchor text) -->
-            <a class="btn accent" href="https://emergency-garage-door.s3.eu-central-1.amazonaws.com/index.html" target="_blank" rel="noopener">
-              24/7 Emergency Garage Door Help
-              <span aria-hidden="true">⚡</span>
-            </a>
-          </div>
-        </div>
+<h2>Why Choose Professional Garage Door Experts</h2>
+<p>
+Garage doors are complex systems made up of springs, cables, tracks, rollers, and openers—all working together under high tension. Even a small issue can quickly turn into a major problem if not handled properly. Experienced garage door experts have the knowledge, tools, and training to diagnose issues accurately and provide long-lasting repairs.
+</p>
 
-        <aside class="hero-card" aria-label="Quick benefits">
-          <h3>Why pros make the difference</h3>
-          <div class="stats">
-            <div class="stat">
-              <strong>Safer Repairs</strong>
-              <span>High-tension parts handled correctly</span>
-            </div>
-            <div class="stat">
-              <strong>Longer Lifespan</strong>
-              <span>Prevent wear & reduce breakdowns</span>
-            </div>
-            <div class="stat">
-              <strong>Quiet Operation</strong>
-              <span>Proper balance + tuned hardware</span>
-            </div>
-            <div class="stat">
-              <strong>Clear Pricing</strong>
-              <span>Honest assessments, no fluff</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
+<p>Professional garage door experts help you:</p>
+<ul>
+  <li>Avoid costly future repairs</li>
+  <li>Improve safety and performance</li>
+  <li>Extend the life of your garage door system</li>
+  <li>Maintain smooth and quiet operation</li>
+</ul>
 
-    <!-- Why choose -->
-    <section class="section" id="why">
-      <h3>Why Choose Professional Garage Door Experts</h3>
-      <p>
-        Garage doors are complex systems made up of springs, cables, tracks, rollers, and openers—all working together
-        under high tension. Even a small issue can quickly turn into a major problem if not handled properly.
-        Trained experts diagnose accurately and deliver repairs that last.
-      </p>
+<div class="divider"></div>
 
-      <div class="grid-2">
-        <div class="callout">
-          <strong>Professionals help you:</strong>
-          <ul class="list">
-            <li>Avoid costly future repairs</li>
-            <li>Improve safety and performance</li>
-            <li>Extend the life of your garage door system</li>
-            <li>Maintain smooth and quiet operation</li>
-          </ul>
-        </div>
+<h2>Comprehensive Garage Door Services in Santa Ana</h2>
+<p>
+Trusted garage door experts in Santa Ana offer complete solutions for residential and commercial properties.
+</p>
 
-        <div class="callout" style="border-color: rgba(251,146,60,.35); background: linear-gradient(135deg, rgba(251,146,60,.14), rgba(96,165,250,.10));">
-          <strong>What you get with expert service</strong>
-          <p>
-            Correct parts for your specific setup, careful adjustments, and complete testing—so your door opens and
-            closes safely, reliably, and efficiently.
-          </p>
-        </div>
-      </div>
-    </section>
+<h3 style="margin:14px 0 6px">Garage Door Repair</h3>
+<p>
+From broken springs and worn cables to off-track doors and damaged panels, professionals handle all types of garage door repairs efficiently and safely.
+</p>
 
-    <!-- Services -->
-    <section class="section" id="services">
-      <h3>Comprehensive Garage Door Services in Santa Ana</h3>
-      <p>
-        Trusted garage door experts provide complete solutions for residential and commercial properties—fast, clean,
-        and built around long-term performance.
-      </p>
+<h3 style="margin:14px 0 6px">Garage Door Installation & Replacement</h3>
+<p>
+Whether you’re installing a new garage door or replacing an outdated one, expert installers ensure proper fit, balance, and alignment for optimal performance and curb appeal.
+</p>
 
-      <div class="cards">
-        <article class="card">
-          <h4>Garage Door Repair</h4>
-          <p>
-            Broken springs, worn cables, off-track doors, noisy rollers, or damaged panels—professionals handle repairs
-            efficiently and safely.
-          </p>
-        </article>
+<h3 style="margin:14px 0 6px">Garage Door Opener Services</h3>
+<p>
+Garage door experts install, repair, and replace all types of openers, including smart and quiet models designed for modern homes.
+</p>
 
-        <article class="card">
-          <h4>Installation & Replacement</h4>
-          <p>
-            New door installs and full replacements done right: proper fit, balance, and alignment for smoother operation
-            and better curb appeal.
-          </p>
-        </article>
-
-        <article class="card">
-          <h4>Garage Door Opener Services</h4>
-          <p>
-            Installation, repair, and replacement for modern openers—including smart and quiet models designed for today’s homes.
-          </p>
-        </article>
-
-        <article class="card">
-          <h4>Emergency Garage Door Services</h4>
-          <p>
-            Unexpected failures happen. Emergency support restores access and security quickly when it matters most.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Systems -->
-    <section class="section" id="systems">
-      <h3>Expert Knowledge of All Garage Door Systems</h3>
-      <p>
-        Professionals work with all major door styles and materials—including steel, aluminum, wood, and insulated doors.
-        They also service torsion and extension spring systems, using the correct parts for each setup.
-      </p>
-    </section>
-
-    <!-- Safety -->
-    <section class="section" id="safety">
-      <h3>Safety-Focused Workmanship</h3>
-      <p>
-        Safety is always the priority. Experts follow strict standards when handling high-tension components. Every service includes
-        testing, adjustments, and inspections to ensure your garage door is safe for daily use.
-      </p>
-    </section>
-
-    <!-- Fast response -->
-    <section class="section" id="response">
-      <h3>Fast Response & Reliable Service</h3>
-      <p>
-        Local Santa Ana professionals understand how important a working garage door is to your daily routine. Quick response times,
-        clear communication, and dependable scheduling keep disruptions minimal.
-      </p>
-    </section>
-
-    <!-- Maintenance -->
-    <section class="section" id="maintenance">
-      <h3>Preventive Maintenance for Long-Term Performance</h3>
-      <p>
-        Routine service prevents sudden breakdowns and extends system life. Professional maintenance typically includes:
-      </p>
-      <ul class="list">
-        <li>Lubrication of moving parts</li>
-        <li>Spring and cable inspection</li>
-        <li>Door balance and alignment checks</li>
-        <li>Safety sensor testing</li>
-      </ul>
-
-      <div class="callout">
-        <strong>Pro tip:</strong>
-        <p>Regular tune-ups keep your door operating smoothly, quietly, and safely—especially during high-use seasons.</p>
-      </div>
-    </section>
-
-    <!-- Customer-first -->
-    <section class="section" id="local">
-      <h3>Customer-Focused Service You Can Trust</h3>
-      <p>
-        Reputable garage door experts are committed to customer satisfaction—honest assessments, transparent pricing,
-        and quality workmanship without unnecessary upsells.
-      </p>
-
-      <div class="callout" style="margin-top:14px;">
-        <strong>Your Local Garage Door Experts in Santa Ana</strong>
-        <p>
-          Choose local professionals who understand the area’s needs and deliver personalized service. With durable repairs and modern
-          installations, your garage door stays secure, functional, and dependable.
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="tiny">
-        © <span id="year"></span> Santa Ana Garage Door Services • Designed for a clean, modern UI/UX
-      </div>
-      <div class="links tiny">
-        <a href="#top">Back to top</a>
-        <a href="#services">Services</a>
-        <a href="#maintenance">Maintenance</a>
-      </div>
-    </footer>
+<!-- ✅ SECOND LINK: mid section -->
+<div class="mid">
+  <div>
+    Looking for a detailed overview of repair solutions and service options?
   </div>
+  <a href="https://alessiaromano.bitbucket.io/" target="_blank" rel="noopener">
+    Explore service guide →
+  </a>
+</div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<div class="divider"></div>
+
+<h2>Emergency Garage Door Services</h2>
+<p>
+Unexpected garage door failures can happen anytime. Emergency services provide fast response to restore access and security when you need it most.
+</p>
+
+<div class="divider"></div>
+
+<h2>Safety-Focused Workmanship</h2>
+<p>
+Safety is always a top priority. Garage door experts follow strict safety standards when handling high-tension components. Every service includes proper testing, adjustments, and inspections to ensure your garage door is safe for daily use.
+</p>
+
+<div class="divider"></div>
+
+<h2>Preventive Maintenance for Long-Term Performance</h2>
+<p>
+Routine garage door maintenance helps prevent sudden breakdowns and extends the life of your system. Regular professional service keeps your garage door operating smoothly and safely.
+</p>
+
+<div class="divider"></div>
+
+<h2>Your Local Garage Door Experts in Santa Ana</h2>
+<p>
+Choosing local garage door experts in Santa Ana means working with professionals who understand the area’s needs and deliver personalized service. With expert solutions, durable repairs, and modern installations, your garage door remains secure, functional, and dependable.
+</p>
+
+<footer>
+  <span>© <span id="y"></span> Santa Ana Garage Door Experts</span>
+  <span>Professional UI/UX • Local Service Optimized</span>
+</footer>
+
+</article>
+</main>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
